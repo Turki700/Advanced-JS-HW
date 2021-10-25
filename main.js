@@ -14,14 +14,18 @@
 //       }
 
 
+//Abrar soluation
 // New Way To fetch
+
 async function getInfo() {
     let url = 'https://www.googleapis.com/books/v1/volumes?q=isbn:0747532699'
     try {
         let res = await fetch(url)
         let data = await res.json()
-        console.log(data.items[0].volumeInfo.title);
-        console.log(data.items[0].volumeInfo.description);
+        let tital = data.items[0].volumeInfo.title;
+        let des= data.items[0].volumeInfo.description;
+
+        showrsulat(tital , des)
     } catch (err) {
         console.log(err);
     }
@@ -30,6 +34,11 @@ async function getInfo() {
 
 getInfo()
 
+function showrsulat(a , b ){
+    console.log(a);
+    console.log(b);
+
+}
 
 
 // Timing Event Exmaple 
